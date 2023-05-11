@@ -1,0 +1,62 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://craftpix-485144-2d-game-terrorists-character-free-sprites-sheets/png/1/idle/1_terrorist_1_Idle_000.png" type="Texture" id=1]
+[ext_resource path="res://craftpix-485144-2d-game-terrorists-character-free-sprites-sheets/png/1/jump/1_terrorist_1_Jump_005.png" type="Texture" id=2]
+[ext_resource path="res://craftpix-485144-2d-game-terrorists-character-free-sprites-sheets/png/1/jump/1_terrorist_1_Jump_004.png" type="Texture" id=3]
+[ext_resource path="res://craftpix-485144-2d-game-terrorists-character-free-sprites-sheets/png/1/jump/1_terrorist_1_Jump_007.png" type="Texture" id=4]
+[ext_resource path="res://craftpix-485144-2d-game-terrorists-character-free-sprites-sheets/png/1/jump/1_terrorist_1_Jump_006.png" type="Texture" id=5]
+[ext_resource path="res://craftpix-485144-2d-game-terrorists-character-free-sprites-sheets/png/1/jump/1_terrorist_1_Jump_003.png" type="Texture" id=6]
+[ext_resource path="res://craftpix-485144-2d-game-terrorists-character-free-sprites-sheets/png/1/jump/1_terrorist_1_Jump_001.png" type="Texture" id=7]
+[ext_resource path="res://craftpix-485144-2d-game-terrorists-character-free-sprites-sheets/png/1/run/1_terrorist_1_Run_005.png" type="Texture" id=8]
+[ext_resource path="res://craftpix-485144-2d-game-terrorists-character-free-sprites-sheets/png/1/run/1_terrorist_1_Run_000.png" type="Texture" id=9]
+[ext_resource path="res://craftpix-485144-2d-game-terrorists-character-free-sprites-sheets/png/1/idle/1_terrorist_1_Idle_002.png" type="Texture" id=10]
+[ext_resource path="res://craftpix-485144-2d-game-terrorists-character-free-sprites-sheets/png/1/run/1_terrorist_1_Run_003.png" type="Texture" id=11]
+[ext_resource path="res://craftpix-485144-2d-game-terrorists-character-free-sprites-sheets/png/1/run/1_terrorist_1_Run_001.png" type="Texture" id=12]
+[ext_resource path="res://craftpix-485144-2d-game-terrorists-character-free-sprites-sheets/png/1/run/1_terrorist_1_Run_004.png" type="Texture" id=13]
+[ext_resource path="res://craftpix-485144-2d-game-terrorists-character-free-sprites-sheets/png/1/idle/1_terrorist_1_Idle_003.png" type="Texture" id=14]
+[ext_resource path="res://craftpix-485144-2d-game-terrorists-character-free-sprites-sheets/png/1/idle/1_terrorist_1_Idle_006.png" type="Texture" id=15]
+[ext_resource path="res://craftpix-485144-2d-game-terrorists-character-free-sprites-sheets/png/1/idle/1_terrorist_1_Idle_001.png" type="Texture" id=16]
+[ext_resource path="res://craftpix-485144-2d-game-terrorists-character-free-sprites-sheets/png/1/jump/1_terrorist_1_Jump_000.png" type="Texture" id=17]
+[ext_resource path="res://craftpix-485144-2d-game-terrorists-character-free-sprites-sheets/png/1/jump/1_terrorist_1_Jump_002.png" type="Texture" id=18]
+[ext_resource path="res://craftpix-485144-2d-game-terrorists-character-free-sprites-sheets/png/1/run/1_terrorist_1_Run_002.png" type="Texture" id=19]
+[ext_resource path="res://craftpix-485144-2d-game-terrorists-character-free-sprites-sheets/png/1/idle/1_terrorist_1_Idle_004.png" type="Texture" id=20]
+[ext_resource path="res://craftpix-485144-2d-game-terrorists-character-free-sprites-sheets/png/1/idle/1_terrorist_1_Idle_005.png" type="Texture" id=21]
+[ext_resource path="res://craftpix-485144-2d-game-terrorists-character-free-sprites-sheets/png/1/idle/1_terrorist_1_Idle_007.png" type="Texture" id=22]
+[ext_resource path="res://AniggmatedSprite.gd" type="Script" id=23]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 16 ), ExtResource( 10 ), ExtResource( 14 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 15 ), ExtResource( 22 ) ],
+"loop": true,
+"name": "idle",
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 7 ), ExtResource( 18 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 5 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "jump",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 12 ), ExtResource( 19 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "run",
+"speed": 100.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 179.936
+height = 206.479
+
+[node name="KinematicBody2D" type="KinematicBody2D"]
+script = ExtResource( 23 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 123.813, 378.5 )
+scale = Vector2( 0.372018, 0.177519 )
+frames = SubResource( 1 )
+animation = "idle"
+frame = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 112, 378 )
+scale = Vector2( 0.622445, 0.541386 )
+shape = SubResource( 2 )
